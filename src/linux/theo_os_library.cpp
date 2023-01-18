@@ -37,6 +37,6 @@ int getValue(){ //Note: this value is in KB!
 };
 
 float get_memory_used_mb(){
-    return memory_used_tools::getValue() / 1000;
+    return ((float)memory_used_tools::getValue()) / 1000;
 }
 
