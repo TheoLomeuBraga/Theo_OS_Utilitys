@@ -5,8 +5,8 @@ test_file=./src/test_lib.cpp
 
 includes=-I./src
 
-lib_path_windows=-I./src/windows -I./src
-lib_path_linux=-I./src/linux -I./src
+lib_path_windows=-I./src/windows -I./src -I./include
+lib_path_linux=-I./src/linux -I./src -I./include
 
 lib_path=-L./built_lib
 lib=-ltheo_os_library
