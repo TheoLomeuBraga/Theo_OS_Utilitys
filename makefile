@@ -1,4 +1,6 @@
-compiler=g++
+compiler_windows=x86_64-w64-mingw32-g++
+compiler_linux=g++
+
 flags=-std=c++20
 
 test_file=./src/test_lib.cpp
@@ -20,12 +22,12 @@ output_foldet_lib=./built_lib
 
 
 windows:
-	${compiler} ${flags} -c ${lib_cpp_file_windows} ${lib_path_windows} ${lib_path}  
+	${compiler_windows} ${flags} -c ${lib_cpp_file_windows} ${lib_path_windows} ${lib_path}  
 	ar rvs ${output_foldet_lib}/libtheo_os_library.a theo_os_library.o
 	rm theo_os_library.o
-	${compiler} ${flags} ${test_file} ${includes} ${lib_path} ${lib}  -o ${output_foldet}/test.exe
+	${compiler_windows} ${flags} ${test_file} ${includes} ${lib_path} ${lib}  -o ${output_foldet}/test.exe
 linux:
-	${compiler} ${flags} -c ${lib_cpp_file_linux} ${lib_path_linux} ${lib_path}  
+	${compiler_linux} ${flags} -c ${lib_cpp_file_linux} ${lib_path_linux} ${lib_path}  
 	ar rvs ${output_foldet_lib}/libtheo_os_library.a theo_os_library.o
 	rm theo_os_library.o
-	${compiler} ${flags} ${test_file} ${includes} ${lib_path} ${lib}  -o ${output_foldet}/test
+	${compiler_linux} ${flags} ${test_file} ${includes} ${lib_path} ${lib}  -o ${output_foldet}/test
